@@ -1,0 +1,76 @@
+// ******************************************************************************
+// * This is an automatically generated file containing the ribbon resource for *
+// * your application.                                                          *
+// ******************************************************************************
+
+#include ".\RibbonIDs.h"
+
+cmdNew_LargeImages_96__RESID    IMAGE    "C:\\Users\\Michal\\Desktop\\icon\\512.png" /* LargeImages cmdNew_LargeImages_96__RESID: (null) */
+cmdNew_LargeImages_111__RESID    IMAGE    "C:\\Users\\Michal\\Desktop\\icon\\24.png" /* LargeImages cmdNew_LargeImages_111__RESID: (null) */
+cmdNew_LargeImages_222__RESID    IMAGE    "C:\\Users\\Michal\\Desktop\\icon\\32.png" /* LargeImages cmdNew_LargeImages_222__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    cmdFileMenu_LabelTitle_RESID L"Label:cmdFileMenu" /* LabelTitle cmdFileMenu_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdMRUItems_LabelTitle_RESID L"Label:cmdMRUItems" /* LabelTitle cmdMRUItems_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdOpen_LabelTitle_RESID L"Label:cmdOpen" /* LabelTitle cmdOpen_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdSave_LabelTitle_RESID L"Label:cmdSave" /* LabelTitle cmdSave_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdPrint_LabelTitle_RESID L"Label:cmdPrint" /* LabelTitle cmdPrint_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdExit_LabelTitle_RESID L"Label:cmdExit" /* LabelTitle cmdExit_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdButton1_LabelTitle_RESID L"Label:cmdButton1" /* LabelTitle cmdButton1_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdMinimize_LabelTitle_RESID L"Label:cmdMinimize" /* LabelTitle cmdMinimize_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdHelpButton_LabelTitle_RESID L"Label:cmdHelpButton" /* LabelTitle cmdHelpButton_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdTabHome_LabelTitle_RESID L"Label:cmdTabHome" /* LabelTitle cmdTabHome_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdClipboardGroup_LabelTitle_RESID L"Label:cmdClipboardGroup" /* LabelTitle cmdClipboardGroup_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdCopy_LabelTitle_RESID L"Label:cmdCopy" /* LabelTitle cmdCopy_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    cmdPaste_LabelTitle_RESID L"Label:cmdPaste" /* LabelTitle cmdPaste_LabelTitle_RESID: (null) */
+END
+
+APPLICATION_RIBBON    UIFILE    "Ribbon.bml"

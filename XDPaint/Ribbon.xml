@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns='http://schemas.microsoft.com/windows/2009/Ribbon'>
+  <Application.Commands>
+    <!-- list of all commands -->
+    <!-- 
+    <Command Name = "xs:string"
+             Symbol = "xs:string"
+             Id = "xs:positiveInteger union xs:string"
+             Comment = "xs:string"
+             LabelTitle = "xs:string"
+             LabelDescription = "xs:string"
+             TooltipTitle = "xs:string"
+             TooltipDescription = "xs:string"
+             Keytip = "xs:string" />
+    -->
+    <Command Name="cmdNew">
+      <Command.LargeImages>
+        <Image MinDPI="96" Source="C:/Users/Michal/Desktop/icon/512.png"/>
+        <Image MinDPI="111" Source="C:/Users/Michal/Desktop/icon/24.png"/>
+        <Image  MinDPI="222" Source="C:/Users/Michal/Desktop/icon/32.png"/>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="cmdQAT" />
+  </Application.Commands>
+
+  <Application.Views>
+    <Ribbon>
+      <!-- ApplicationMenu -->
+      <Ribbon.ApplicationMenu>
+        <ApplicationMenu CommandName="cmdFileMenu">
+          <ApplicationMenu.RecentItems>
+            <RecentItems CommandName="cmdMRUItems"/>
+          </ApplicationMenu.RecentItems>
+          <!-- Menu items collection. -->
+          <MenuGroup>
+            <Button CommandName="cmdNew" />
+            <Button CommandName="cmdOpen" />
+            <Button CommandName="cmdSave" />
+          </MenuGroup>
+          <MenuGroup>
+            <Button CommandName="cmdPrint" />
+            <Button CommandName="cmdExit" />
+          </MenuGroup>
+        </ApplicationMenu>
+      </Ribbon.ApplicationMenu>
+      <!-- QuickAccessToolbar -->
+      <Ribbon.QuickAccessToolbar>
+        <QuickAccessToolbar CommandName="cmdQAT"
+                            CustomizeCommandName="cmdCustomizeQAT">
+          <QuickAccessToolbar.ApplicationDefaults>
+            <Button CommandName="cmdButton1"/>
+            <ToggleButton CommandName="cmdMinimize"
+                          ApplicationDefaults.IsChecked="false"/>
+          </QuickAccessToolbar.ApplicationDefaults>
+        </QuickAccessToolbar>
+      </Ribbon.QuickAccessToolbar>
+      <!-- HelpButton -->
+      <Ribbon.HelpButton>
+        <HelpButton CommandName="cmdHelpButton"/>
+      </Ribbon.HelpButton>
+      <!-- Tabs -->
+      <Ribbon.Tabs>
+        <Tab CommandName="cmdTabHome">
+          <Group CommandName="cmdClipboardGroup"
+                 SizeDefinition="ThreeButtons">
+            <Button CommandName="cmdCopy"/>
+            <Button CommandName="cmdPaste"/>
+            <ToggleButton CommandName="cmdMinimize"/>
+          </Group>
+        </Tab>
+      </Ribbon.Tabs>
+      
+    </Ribbon>
+  </Application.Views>
+</Application>
