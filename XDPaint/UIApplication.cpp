@@ -1,6 +1,15 @@
 #include "UIApplication.hpp"
 #include "Windows.h" //GlobalAlloc, GlobalFree
 
+UIApplication::UIApplication(std::function<void(UINT32)> onHeightChangedHandler,
+	std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler **commandHandler)> onCreateUICommandHandler,
+	std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler *commandHandler)> onDestroyUICommandHandler)
+{
+	OnHeightChangedHandler = onHeightChangedHandler;
+	OnCreateUICommandHandler = onCreateUICommandHandler;
+	OnDestroyUICommandHandler = onDestroyUICommandHandler;
+}
+
 void *UIApplication::operator new(size_t size)
 {
 	//void *p = ::new UIApplication();
@@ -12,11 +21,6 @@ void *UIApplication::operator new(size_t size)
 void UIApplication::operator delete(void * p)
 {
 	GlobalFree(p);
-}
-
-UIApplication::UIApplication()
-{
-	OutstandingObjects = 0;
 }
 
 HRESULT UIApplication::QueryInterface(REFIID riid, void ** ppvObject)
@@ -43,20 +47,49 @@ ULONG UIApplication::AddRef(void)
 
 ULONG UIApplication::Release(void)
 {
-	return InterlockedDecrement(&OutstandingObjects);
+	ULONG i = InterlockedDecrement(&OutstandingObjects);
+	if (i == 0)
+		delete this;
+
+	return i;
 }
 
 HRESULT UIApplication::OnViewChanged(UINT32 viewId, UI_VIEWTYPE typeID, IUnknown * view, UI_VIEWVERB verb, INT32 uReasonCode)
 {
-	return E_NOTIMPL;
+	HRESULT hr = E_NOTIMPL;
+	if (typeID != UI_VIEWTYPE_RIBBON) return hr;
+	switch (verb)
+	{
+	case UI_VIEWVERB_CREATE:
+		hr = view->QueryInterface(&Ribbon);
+		break;
+	case UI_VIEWVERB_DESTROY:
+		Ribbon = nullptr;
+		hr = S_OK;
+		break;
+	case UI_VIEWVERB_SIZE:
+		if (Ribbon) {
+			UINT32 height = 0;
+			hr = Ribbon->GetHeight(&height);
+			if (SUCCEEDED(hr)) {
+				OnHeightChangedHandler(height);
+			}
+		}
+		break;
+	}
+	return hr;
 }
 
 HRESULT UIApplication::OnCreateUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler ** commandHandler)
 {
+	if (OnCreateUICommandHandler)
+		return OnCreateUICommandHandler(commandId, typeID, commandHandler);
 	return E_NOTIMPL;
 }
 
 HRESULT UIApplication::OnDestroyUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler * commandHandler)
 {
+	if (OnDestroyUICommandHandler)
+		return OnDestroyUICommandHandler(commandId, typeID, commandHandler);
 	return E_NOTIMPL;
 }

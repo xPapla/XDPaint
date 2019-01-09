@@ -1,13 +1,20 @@
 #pragma once
+#include <functional>
 #include <UIRibbon.h>
 
 //maybe? HRESULT hRes = CComObject<CMyCircle>::CreateInstance(&pCircle);
 
 class UIApplication :
 	IUIApplication {
-	LONG OutstandingObjects;
+	LONG OutstandingObjects = 0;
+	IUIRibbon *Ribbon = nullptr;
+	std::function<void(UINT32)> OnHeightChangedHandler; //takes UINT32, returns void 
+	std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler **commandHandler)> OnCreateUICommandHandler;
+	std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler *commandHandler)> OnDestroyUICommandHandler;
 public:
-	UIApplication();
+	UIApplication(std::function<void(UINT32)> onHeightChangedHandler,
+		std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler **commandHandler)> onCreateUICommandHandler,
+		std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler *commandHandler)> onDestroyUICommandHandler);
 	void *operator new(size_t size);
 	void operator delete(void *p);
 	// Inherited via IUIApplication
