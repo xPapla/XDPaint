@@ -33,7 +33,7 @@ bool MainWindow::InitSFMLwindow(HINSTANCE hInstance)
 		NULL,
 		WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS,
 		// Size and position
-		100, 100, 500, 781,
+		100, 100, 200, 200,
 		hWnd,                    // Parent window
 		NULL,                    // Menu
 		hInstance,               // Instance handle
@@ -42,116 +42,6 @@ bool MainWindow::InitSFMLwindow(HINSTANCE hInstance)
 	if (sfmlHWND == NULL) return true;
 	SFMLwindow = new SFMLWindow(sfmlHWND);
 	return false;
-}
-
-
-LRESULT CALLBACK MainWindow::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-	/* on window creation save pointer to mainwindow class handling window */
-	if (uMsg == WM_CREATE) {
-		CREATESTRUCT *data = (CREATESTRUCT *)lParam;
-		MainWindow *me = static_cast<MainWindow *>(data->lpCreateParams);
-		if (me) {
-			me->hWnd = hwnd;
-			SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG>(me));
-			return me->RealWindowProc(hwnd, uMsg, wParam, lParam);
-		}
-		else {/* should never occur */ }
-	}
-	/* try to call parent func previously saved */
-	MainWindow *me = reinterpret_cast<MainWindow*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	if (me) return me->RealWindowProc(hwnd, uMsg, wParam, lParam);
-
-	/* fallback (should only handle 2 messages before WM_CREATE) */
-	/* https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-createwindowa#remarks */
-	return DefWindowProc(hwnd, uMsg, wParam, lParam);
-}
-
-LRESULT MainWindow::RealWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-	switch (uMsg)
-	{
-	case WM_CREATE:
-	{
-		IUIFramework* pFramework = NULL;
-		UIApplication *m_pApplication = NULL;
-		void *ppvObj = NULL;
-
-		HRESULT hr = CoCreateInstance(CLSID_UIRibbonFramework, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pFramework));
-		if (FAILED(hr)) return -1;
-
-		using namespace std::placeholders;
-
-		/* allocate pApplication */
-		m_pApplication = new UIApplication(
-			std::bind(&MainWindow::HandleRibbonResize, this, _1),
-			std::bind(&MainWindow::HandleCreateUICommand, this, _1, _2, _3),
-			std::bind(&MainWindow::HandleDestroyUICommand, this, _1, _2, _3)); 
-		//TODO: \/ fix to be UIApplication
-
-		hr = m_pApplication->QueryInterface(__uuidof(IUIApplication), (void **)&pApplication);
-		if (FAILED(hr)) {
-			delete m_pApplication; //as auto cleanup is not available here
-			return -1;
-		}
-
-		hr = pFramework->Initialize(hwnd, (IUIApplication *)pApplication);
-		pApplication->Release(); //auto cleanup on failure
-		if (FAILED(hr)) return -1;
-
-		//	static const int MaxResStringLength = 100;
-		//wchar_t ribbonMarkup[MaxResStringLength] = { 0 };
-		//// Obtain the name of the BML resource
-		//::LoadString(
-		//	HINST_THISCOMPONENT, IDS_RIBBON_MARKUP,
-		//	ribbonMarkup, MaxResStringLength);
-
-		hr = pFramework->LoadUI(GetModuleHandle(NULL), L"APPLICATION_RIBBON");
-		if (FAILED(hr)) return -1;
-
-		return 0;
-	}
-	case WM_SIZE:
-	{
-		HandleResize();
-		//InvalidateRect(hWnd, NULL, 1);
-		return DefWindowProc(hwnd, uMsg, wParam, lParam);
-	}
-	case WM_DESTROY:
-	{
-		this->~MainWindow();
-		PostQuitMessage(0);
-		return 0;
-	}
-	}
-	return DefWindowProc(hwnd, uMsg, wParam, lParam);
-}
-
-void MainWindow::HandleRibbonResize(UINT32 current)
-{
-	ribbonHeight = current;
-	HandleResize();
-}
-
-HRESULT MainWindow::HandleCreateUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler ** commandHandler)
-{
-	return E_NOTIMPL;
-}
-
-HRESULT MainWindow::HandleDestroyUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler * commandHandler)
-{
-	return E_NOTIMPL;
-}
-
-void MainWindow::HandleResize()
-{
-	RECT r;
-	if (!GetClientRect(hWnd, &r)) return;
-	int height = r.bottom - ribbonHeight;
-	if (height < 0) height = 0;
-	if (SFMLwindow)
-	SFMLwindow->Resize(0, ribbonHeight, r.right, height);
-	//SetWindowPos(sfmlHWND, NULL, 0, ribbonHeight, r.right, height, SWP_NOZORDER);
 }
 
 MainWindow::MainWindow(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, INT nCmdShow)
@@ -195,4 +85,150 @@ MainWindow::~MainWindow()
 		delete pFramework;
 		pFramework = nullptr;
 	}
+}
+
+LRESULT CALLBACK MainWindow::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	/* on window creation save pointer to mainwindow class handling window */
+	if (uMsg == WM_CREATE) {
+		CREATESTRUCT *data = (CREATESTRUCT *)lParam;
+		MainWindow *me = static_cast<MainWindow *>(data->lpCreateParams);
+		if (me) {
+			me->hWnd = hwnd;
+			SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG>(me));
+			return me->RealWindowProc(hwnd, uMsg, wParam, lParam);
+		}
+		else {/* should never occur */ }
+	}
+	/* try to call parent func previously saved */
+	MainWindow *me = reinterpret_cast<MainWindow*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	if (me) return me->RealWindowProc(hwnd, uMsg, wParam, lParam);
+
+	/* fallback (should only handle 2 messages before WM_CREATE) */
+	/* https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-createwindowa#remarks */
+	return DefWindowProc(hwnd, uMsg, wParam, lParam);
+}
+
+LRESULT MainWindow::RealWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	switch (uMsg)
+	{
+	case WM_CREATE:
+	{
+		IUIFramework* pFramework = NULL;
+		UIApplication *m_pApplication = NULL;
+		UICommandHandler *m_pCommandHandler = NULL;
+		void *ppvObj = NULL;
+
+		HRESULT hr = CoCreateInstance(CLSID_UIRibbonFramework, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pFramework));
+		if (FAILED(hr)) return -1;
+
+		using namespace std::placeholders;
+
+		/* allocate pApplication */
+		m_pApplication = new UIApplication(
+			std::bind(&MainWindow::HandleOnViewChanged, this, _1, _2, _3, _4, _5),
+			std::bind(&MainWindow::HandleOnCreateUICommand, this, _1, _2, _3),
+			std::bind(&MainWindow::HandleOnDestroyUICommand, this, _1, _2, _3));
+
+		m_pCommandHandler = new UICommandHandler(
+			std::bind(&MainWindow::HandleExecute, this, _1, _2, _3, _4, _5),
+			std::bind(&MainWindow::HandleUpdateProperty, this, _1, _2, _3, _4));
+		//TODO: \/ fix to be UIApplication
+		hr = m_pApplication->QueryInterface(__uuidof(IUIApplication), (void **)&pApplication);
+		if (FAILED(hr)) {
+			delete m_pApplication; //as auto cleanup is not available here
+			return -1;
+		}
+
+		hr = pFramework->Initialize(hwnd, (IUIApplication *)pApplication);
+		pApplication->Release(); //auto cleanup on failure
+		if (FAILED(hr)) return -1;
+
+		//	static const int MaxResStringLength = 100;
+		//wchar_t ribbonMarkup[MaxResStringLength] = { 0 };
+		//// Obtain the name of the BML resource
+		//::LoadString(
+		//	HINST_THISCOMPONENT, IDS_RIBBON_MARKUP,
+		//	ribbonMarkup, MaxResStringLength);
+
+		hr = pFramework->LoadUI(GetModuleHandle(NULL), L"APPLICATION_RIBBON");
+		if (FAILED(hr)) return -1;
+
+		return 0;
+	}
+	case WM_SIZE:
+	{
+		HandleResize();
+		//InvalidateRect(hWnd, NULL, 1);
+		return DefWindowProc(hwnd, uMsg, wParam, lParam);
+	}
+	case WM_DESTROY:
+	{
+		this->~MainWindow();
+		PostQuitMessage(0);
+		return 0;
+	}
+	}
+	return DefWindowProc(hwnd, uMsg, wParam, lParam);
+}
+
+HRESULT MainWindow::HandleOnViewChanged(UINT32 viewId, UI_VIEWTYPE typeID, IUnknown * view, UI_VIEWVERB verb, INT32 uReasonCode)
+{
+	HRESULT hr = E_NOTIMPL;
+	if (typeID != UI_VIEWTYPE_RIBBON) return hr;
+	switch (verb)
+	{
+	case UI_VIEWVERB_CREATE:
+		hr = view->QueryInterface(&pRibbon);
+		break;
+	case UI_VIEWVERB_DESTROY:
+		pRibbon = nullptr;
+		hr = S_OK;
+		break;
+	case UI_VIEWVERB_SIZE:
+		if (pRibbon) {
+			UINT32 height = 0;
+			hr = pRibbon->GetHeight(&height);
+			if (SUCCEEDED(hr)) {
+				ribbonHeight = height;
+				HandleResize();
+			}
+		}
+		break;
+	}
+	return hr;
+}
+
+
+HRESULT MainWindow::HandleOnCreateUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler ** commandHandler)
+{
+	if (!pCommandHandler) pCommandHandler = new UICommandHandler();
+	return pCommandHandler->QueryInterface(IID_PPV_ARGS(commandHandler));
+}
+
+HRESULT MainWindow::HandleOnDestroyUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler * commandHandler)
+{
+	return E_NOTIMPL;
+}
+
+HRESULT MainWindow::HandleExecute(UINT32 commandId, UI_EXECUTIONVERB verb, const PROPERTYKEY * key, const PROPVARIANT * currentValue, IUISimplePropertySet * commandExecutionProperties)
+{
+	return E_NOTIMPL;
+}
+
+HRESULT MainWindow::HandleUpdateProperty(UINT32 commandId, REFPROPERTYKEY key, const PROPVARIANT * currentValue, PROPVARIANT * newValue)
+{
+	return E_NOTIMPL;
+}
+
+void MainWindow::HandleResize()
+{
+	RECT r;
+	if (!GetClientRect(hWnd, &r)) return;
+	int height = r.bottom - ribbonHeight;
+	if (height < 0) height = 0;
+	if (SFMLwindow)
+		SFMLwindow->Resize(0, ribbonHeight, r.right, height);
+	//SetWindowPos(sfmlHWND, NULL, 0, ribbonHeight, r.right, height, SWP_NOZORDER);
 }

@@ -167,6 +167,7 @@
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="UIApplication.cpp" />
+    <ClCompile Include="UICommandHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Canvas.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="UIApplication.hpp" />
+    <ClInclude Include="UICommandHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Ribbon.xml">

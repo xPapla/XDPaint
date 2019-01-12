@@ -1,11 +1,12 @@
 #include "UIApplication.hpp"
-#include "Windows.h" //GlobalAlloc, GlobalFree
+#include <Windows.h> //GlobalAlloc, GlobalFree
 
-UIApplication::UIApplication(std::function<void(UINT32)> onHeightChangedHandler,
-	std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler **commandHandler)> onCreateUICommandHandler,
-	std::function<HRESULT(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler *commandHandler)> onDestroyUICommandHandler)
+UIApplication::UIApplication(
+	std::function<HRESULT(UINT32, UI_VIEWTYPE, IUnknown*, UI_VIEWVERB, INT32)> onViewChangedHandler,
+	std::function<HRESULT(UINT32, UI_COMMANDTYPE, IUICommandHandler**)> onCreateUICommandHandler,
+	std::function<HRESULT(UINT32, UI_COMMANDTYPE, IUICommandHandler*)> onDestroyUICommandHandler)
 {
-	OnHeightChangedHandler = onHeightChangedHandler;
+	OnViewChangedHandler = onViewChangedHandler;
 	OnCreateUICommandHandler = onCreateUICommandHandler;
 	OnDestroyUICommandHandler = onDestroyUICommandHandler;
 }
@@ -56,28 +57,9 @@ ULONG UIApplication::Release(void)
 
 HRESULT UIApplication::OnViewChanged(UINT32 viewId, UI_VIEWTYPE typeID, IUnknown * view, UI_VIEWVERB verb, INT32 uReasonCode)
 {
-	HRESULT hr = E_NOTIMPL;
-	if (typeID != UI_VIEWTYPE_RIBBON) return hr;
-	switch (verb)
-	{
-	case UI_VIEWVERB_CREATE:
-		hr = view->QueryInterface(&Ribbon);
-		break;
-	case UI_VIEWVERB_DESTROY:
-		Ribbon = nullptr;
-		hr = S_OK;
-		break;
-	case UI_VIEWVERB_SIZE:
-		if (Ribbon) {
-			UINT32 height = 0;
-			hr = Ribbon->GetHeight(&height);
-			if (SUCCEEDED(hr)) {
-				OnHeightChangedHandler(height);
-			}
-		}
-		break;
-	}
-	return hr;
+	if (OnViewChangedHandler)
+		return OnViewChangedHandler(viewId, typeID, view, verb, uReasonCode);
+	return E_NOTIMPL;
 }
 
 HRESULT UIApplication::OnCreateUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler ** commandHandler)
