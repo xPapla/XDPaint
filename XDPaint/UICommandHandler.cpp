@@ -56,13 +56,13 @@ ULONG __stdcall UICommandHandler::Release(void)
 HRESULT __stdcall UICommandHandler::Execute(UINT32 commandId, UI_EXECUTIONVERB verb, const PROPERTYKEY * key, const PROPVARIANT * currentValue, IUISimplePropertySet * commandExecutionProperties)
 {
 	if (ExecuteHandler)
-		ExecuteHandler(commandId, verb, key, currentValue, commandExecutionProperties);
+		return ExecuteHandler(commandId, verb, key, currentValue, commandExecutionProperties);
 	return E_NOTIMPL;
 }
 
 HRESULT __stdcall UICommandHandler::UpdateProperty(UINT32 commandId, REFPROPERTYKEY key, const PROPVARIANT * currentValue, PROPVARIANT * newValue)
 {
 	if (UpdatePropertyHandler)
-		UpdatePropertyHandler(commandId, key, currentValue, newValue);
+		return UpdatePropertyHandler(commandId, key, currentValue, newValue);
 	return E_NOTIMPL;
 }

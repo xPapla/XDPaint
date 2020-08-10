@@ -13,14 +13,250 @@
              TooltipDescription = "xs:string"
              Keytip = "xs:string" />
     -->
-    <Command Name="cmdNew">
+    <Command Name="cmdNew"
+         Symbol="ID_APM_NEW"
+         LabelTitle="Nowy"
+         LabelDescription="Nowy plik"
+         TooltipTitle="Nowy (CTRL+N)"
+         TooltipDescription="Tworzy nowy plik."
+         Keytip="N">
       <Command.LargeImages>
-        <Image MinDPI="96" Source="C:/Users/Michal/Desktop/icon/512.png"/>
-        <Image MinDPI="111" Source="C:/Users/Michal/Desktop/icon/24.png"/>
-        <Image  MinDPI="222" Source="C:/Users/Michal/Desktop/icon/32.png"/>
+        <Image Source="img/32/018-folder-1.png" MinDPI="96" />
+        <Image Source="img/64/018-folder-1.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/018-folder-1.png" MinDPI="96" />
+        <Image Source="img/32/018-folder-1.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdOpen"
+         Symbol="ID_APM_OPEN"
+         LabelTitle="Otwórz"
+         LabelDescription="Otwórz plik"
+         TooltipTitle="Otwórz (CTRL+O)"
+         TooltipDescription="Otwiera istniejący obraz."
+         Keytip="O">
+      <Command.LargeImages>
+        <Image Source="img/32/015-folder.png" MinDPI="96" />
+        <Image Source="img/64/015-folder.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/015-folder.png" MinDPI="96" />
+        <Image Source="img/32/015-folder.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdSave"
+         Symbol="ID_APM_SAVE"
+         LabelTitle="Zapisz z tłem"
+         LabelDescription="Zapisz plik z tłem"
+         TooltipTitle="Zapisz (CTRL+O)"
+         TooltipDescription="Zapisuje obraz."
+         Keytip="O">
+      <Command.LargeImages>
+        <Image Source="img/32/016-diskette.png" MinDPI="96" />
+        <Image Source="img/64/016-diskette.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/016-diskette.png" MinDPI="96" />
+        <Image Source="img/32/016-diskette.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdSaveAs"
+         Symbol="ID_APM_SAVE_AS"
+         LabelTitle="Zapisz bez tła"
+         LabelDescription="Zapisz plik bez tła"
+         TooltipTitle="Zapisz jako (CTRL+SHIFT+S)"
+         TooltipDescription="Zapisuje obraz do nowego pliku."
+         Keytip="A">
+      <Command.LargeImages>
+        <Image Source="img/32/016-diskette.png" MinDPI="96" />
+        <Image Source="img/64/016-diskette.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/016-diskette.png" MinDPI="96" />
+        <Image Source="img/32/016-diskette.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdPrint"
+         Symbol="ID_APM_PRINT"
+         LabelTitle="Drukuj"
+         LabelDescription="Drukuj obraz"
+         TooltipTitle="Drukuj (CTRL+P)"
+         TooltipDescription="Drukuje obraz."
+         Keytip="P">
+      <Command.LargeImages>
+        <Image Source="img/32/020-printer.png" MinDPI="96" />
+        <Image Source="img/64/020-printer.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/020-printer.png" MinDPI="96" />
+        <Image Source="img/32/020-printer.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdSettings"
+         Symbol="ID_APM_SETTINGS"
+         LabelTitle="Ustawienia"
+         LabelDescription="Ustawienia obrazu"
+         TooltipTitle="Ustawienia"
+         TooltipDescription="Zmień ustawienia obrazu.">
+      <Command.LargeImages>
+        <Image Source="img/32/017-gear.png" MinDPI="96" />
+        <Image Source="img/64/017-gear.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/017-gear.png" MinDPI="96" />
+        <Image Source="img/32/017-gear.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdInformation"
+         Symbol="ID_APM_INFORMATION"
+         LabelTitle="XDPaint - informacje"
+         LabelDescription="XDPaint - informacje o programie"
+         TooltipTitle="XDPaint - informacje"
+         TooltipDescription="Wyświetl informacje o programie.">
+      <Command.LargeImages>
+        <Image Source="img/32/019-police-hat.png" MinDPI="96" />
+        <Image Source="img/64/019-police-hat.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/019-police-hat.png" MinDPI="96" />
+        <Image Source="img/32/019-police-hat.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdExit"
+         Symbol="ID_APM_EXIT"
+         LabelTitle="Zakończ"
+         LabelDescription="Zakończ program"
+         TooltipTitle="Zakończ"
+         TooltipDescription="Zakończ program.">
+      <Command.LargeImages>
+        <Image Source="img/32/021-door.png" MinDPI="96" />
+        <Image Source="img/64/021-door.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/021-door.png" MinDPI="96" />
+        <Image Source="img/32/021-door.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+
+    <Command Name="cmdToolPencil"
+        Symbol="ID_TOOL_PENCIL"
+        LabelTitle="Ołówek">
+      <Command.LargeImages>
+        <Image Source="img/32/002-edit.png" MinDPI="96" />
+        <Image Source="img/64/002-edit.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/002-edit.png" MinDPI="96" />
+        <Image Source="img/32/002-edit.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <!--<Command Name="cmdToolFill"
+        Symbol="ID_TOOL_FILL"
+        LabelTitle="Wiaderko">
+      <Command.LargeImages>
+        <Image Source="img/32/004-paint-bucket.png" MinDPI="96" />
+        <Image Source="img/64/004-paint-bucket.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/004-paint-bucket.png" MinDPI="96" />
+        <Image Source="img/32/004-paint-bucket.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>-->
+    <Command Name="cmdToolText"
+        Symbol="ID_TOOL_TEXT"
+        LabelTitle="Tekst">
+      <Command.LargeImages>
+        <Image Source="img/32/007-text.png" MinDPI="96" />
+        <Image Source="img/64/007-text.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/007-text.png" MinDPI="96" />
+        <Image Source="img/32/007-text.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <!--<Command Name="cmdToolEraser"
+        Symbol="ID_TOOL_ERASER"
+        LabelTitle="Gumka">
+      <Command.LargeImages>
+        <Image Source="img/32/006-eraser.png" MinDPI="96" />
+        <Image Source="img/64/006-eraser.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/006-eraser.png" MinDPI="96" />
+        <Image Source="img/32/006-eraser.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>-->
+    <Command Name="cmdToolPipette"
+        Symbol="ID_TOOL_PIPETTE"
+        LabelTitle="Pobierz kolor">
+      <Command.LargeImages>
+        <Image Source="img/32/003-pipette.png" MinDPI="96" />
+        <Image Source="img/64/003-pipette.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/003-pipette.png" MinDPI="96" />
+        <Image Source="img/32/003-pipette.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+    <Command Name="cmdToolMagnifier"
+        Symbol="ID_TOOL_MAGNIFIER"
+        LabelTitle="Lupa">
+      <Command.LargeImages>
+        <Image Source="img/32/005-search.png" MinDPI="96" />
+        <Image Source="img/64/005-search.png" MinDPI="192" />
+      </Command.LargeImages>
+      <Command.SmallImages>
+        <Image Source="img/16/005-search.png" MinDPI="96" />
+        <Image Source="img/32/005-search.png" MinDPI="192" />
+      </Command.SmallImages>
+    </Command>
+
+    <Command Name="cmdColorPickerBG" Symbol="ID_COLORPICKER_BACKGROUND" LabelTitle="Tło">
+      <Command.LargeImages>
+        <Image>img/CP.bmp</Image>
       </Command.LargeImages>
     </Command>
-    <Command Name="cmdQAT" />
+    <Command Name="cmdColorPickerFILL" Symbol="ID_COLORPICKER_FILL" LabelTitle="Wypełnienie">
+      <Command.LargeImages>
+        <Image>img/CP.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="cmdColorPickerOUT" Symbol="ID_COLORPICKER_OUTLINE" LabelTitle="Kontur">
+      <Command.LargeImages>
+        <Image>img/CP.bmp</Image>
+      </Command.LargeImages>
+    </Command>
+
+    <Command Name="cmdSpinner" Symbol="ID_SPINNER" Id="30015">
+      <Command.LabelTitle>
+        <String Id="215">Grubość:</String>
+      </Command.LabelTitle>
+    </Command>
+
+    <Command Name="cmdGroupTools"
+        Symbol="ID_GROUP_TOOLS"
+        LabelTitle="Narzędzia">
+    </Command>
+    <Command Name="cmdGroupShapes"
+        Symbol="ID_GROUP_SHAPES"
+        LabelTitle="Kształty">
+    </Command>
+    <Command Name="cmdGroupColorPicker"
+        Symbol="ID_GROUP_COLOR_PICKER"
+        LabelTitle="Kolory">
+    </Command>
+    <Command Name="cmdGroupOutline"
+        Symbol="ID_GROUP_OUTLINE"
+        LabelTitle="Kontur">
+    </Command>
+
+    <Command Name="cmdShapes" Symbol="ID_SHAPEPICKER">
+      <Command.LabelTitle>
+        <String>Shapes</String>
+      </Command.LabelTitle>
+    </Command>
+
   </Application.Commands>
 
   <Application.Views>
@@ -36,9 +272,18 @@
             <Button CommandName="cmdNew" />
             <Button CommandName="cmdOpen" />
             <Button CommandName="cmdSave" />
+            <Button CommandName="cmdSaveAs" />
           </MenuGroup>
           <MenuGroup>
             <Button CommandName="cmdPrint" />
+          </MenuGroup>
+          <MenuGroup>
+            <Button CommandName="cmdSettings" />
+          </MenuGroup>
+          <MenuGroup>
+            <Button CommandName="cmdInformation" />
+          </MenuGroup>
+          <MenuGroup>
             <Button CommandName="cmdExit" />
           </MenuGroup>
         </ApplicationMenu>
@@ -61,15 +306,37 @@
       <!-- Tabs -->
       <Ribbon.Tabs>
         <Tab CommandName="cmdTabHome">
-          <Group CommandName="cmdClipboardGroup"
-                 SizeDefinition="ThreeButtons">
-            <Button CommandName="cmdCopy"/>
-            <Button CommandName="cmdPaste"/>
-            <ToggleButton CommandName="cmdMinimize"/>
+
+          <Group CommandName="cmdGroupTools"
+                 SizeDefinition="OneButton">
+            <ToggleButton CommandName="cmdToolPencil"/>
           </Group>
+
+          <Group CommandName="cmdGroupShapes"
+                 SizeDefinition="OneInRibbonGallery">
+
+            <InRibbonGallery CommandName="cmdShapes"
+                   MaxColumns="3"
+                   MinColumnsMedium="1"
+                   ItemHeight="32"
+                   ItemWidth="32"
+                   TextPosition="Bottom"
+                   Type="Items">
+            </InRibbonGallery>
+          </Group>
+
+          <Group CommandName="cmdGroupColorPicker" SizeDefinition="ThreeButtons">
+            <DropDownColorPicker ChipSize="Large" IsNoColorButtonVisible="false" IsAutomaticColorButtonVisible="false" RecentColorGridRows="1" ColorTemplate="ThemeColors" CommandName="cmdColorPickerBG" />
+            <DropDownColorPicker ChipSize="Large" IsNoColorButtonVisible="false" IsAutomaticColorButtonVisible="false" RecentColorGridRows="1" ColorTemplate="ThemeColors" CommandName="cmdColorPickerFILL" />
+            <DropDownColorPicker ChipSize="Large" IsNoColorButtonVisible="false" IsAutomaticColorButtonVisible="false" RecentColorGridRows="1" ColorTemplate="ThemeColors" CommandName="cmdColorPickerOUT" />
+          </Group>
+
+          <Group CommandName="cmdGroupOutline">
+            <Spinner CommandName="cmdSpinner" />
+          </Group>
+
         </Tab>
       </Ribbon.Tabs>
-      
     </Ribbon>
   </Application.Views>
 </Application>

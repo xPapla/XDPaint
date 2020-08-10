@@ -5,9 +5,307 @@
 
 #include ".\RibbonIDs.h"
 
-cmdNew_LargeImages_96__RESID    IMAGE    "C:\\Users\\Michal\\Desktop\\icon\\512.png" /* LargeImages cmdNew_LargeImages_96__RESID: (null) */
-cmdNew_LargeImages_111__RESID    IMAGE    "C:\\Users\\Michal\\Desktop\\icon\\24.png" /* LargeImages cmdNew_LargeImages_111__RESID: (null) */
-cmdNew_LargeImages_222__RESID    IMAGE    "C:\\Users\\Michal\\Desktop\\icon\\32.png" /* LargeImages cmdNew_LargeImages_222__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_NEW_LabelTitle_RESID L"Nowy" /* LabelTitle ID_APM_NEW_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_NEW_LabelDescription_RESID L"Nowy plik" /* LabelDescription ID_APM_NEW_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_NEW_Keytip_RESID L"N" /* Keytip ID_APM_NEW_Keytip_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_NEW_TooltipTitle_RESID L"Nowy (CTRL+N)" /* TooltipTitle ID_APM_NEW_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_NEW_TooltipDescription_RESID L"Tworzy nowy plik." /* TooltipDescription ID_APM_NEW_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_NEW_SmallImages_96__RESID    IMAGE    "img\\16\\018-folder-1.png" /* SmallImages ID_APM_NEW_SmallImages_96__RESID: (null) */
+ID_APM_NEW_SmallImages_192__RESID    IMAGE    "img\\32\\018-folder-1.png" /* SmallImages ID_APM_NEW_SmallImages_192__RESID: (null) */
+ID_APM_NEW_LargeImages_96__RESID    IMAGE    "img\\32\\018-folder-1.png" /* LargeImages ID_APM_NEW_LargeImages_96__RESID: (null) */
+ID_APM_NEW_LargeImages_192__RESID    IMAGE    "img\\64\\018-folder-1.png" /* LargeImages ID_APM_NEW_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_OPEN_LabelTitle_RESID L"Otw\x00f3rz" /* LabelTitle ID_APM_OPEN_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_OPEN_LabelDescription_RESID L"Otw\x00f3rz plik" /* LabelDescription ID_APM_OPEN_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_OPEN_Keytip_RESID L"O" /* Keytip ID_APM_OPEN_Keytip_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_OPEN_TooltipTitle_RESID L"Otw\x00f3rz (CTRL+O)" /* TooltipTitle ID_APM_OPEN_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_OPEN_TooltipDescription_RESID L"Otwiera istniej\x0105cy obraz." /* TooltipDescription ID_APM_OPEN_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_OPEN_SmallImages_96__RESID    IMAGE    "img\\16\\015-folder.png" /* SmallImages ID_APM_OPEN_SmallImages_96__RESID: (null) */
+ID_APM_OPEN_SmallImages_192__RESID    IMAGE    "img\\32\\015-folder.png" /* SmallImages ID_APM_OPEN_SmallImages_192__RESID: (null) */
+ID_APM_OPEN_LargeImages_96__RESID    IMAGE    "img\\32\\015-folder.png" /* LargeImages ID_APM_OPEN_LargeImages_96__RESID: (null) */
+ID_APM_OPEN_LargeImages_192__RESID    IMAGE    "img\\64\\015-folder.png" /* LargeImages ID_APM_OPEN_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_LabelTitle_RESID L"Zapisz z t\x0142em" /* LabelTitle ID_APM_SAVE_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_LabelDescription_RESID L"Zapisz plik z t\x0142em" /* LabelDescription ID_APM_SAVE_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_Keytip_RESID L"O" /* Keytip ID_APM_SAVE_Keytip_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_TooltipTitle_RESID L"Zapisz (CTRL+O)" /* TooltipTitle ID_APM_SAVE_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_TooltipDescription_RESID L"Zapisuje obraz." /* TooltipDescription ID_APM_SAVE_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_SAVE_SmallImages_96__RESID    IMAGE    "img\\16\\016-diskette.png" /* SmallImages ID_APM_SAVE_SmallImages_96__RESID: (null) */
+ID_APM_SAVE_SmallImages_192__RESID    IMAGE    "img\\32\\016-diskette.png" /* SmallImages ID_APM_SAVE_SmallImages_192__RESID: (null) */
+ID_APM_SAVE_LargeImages_96__RESID    IMAGE    "img\\32\\016-diskette.png" /* LargeImages ID_APM_SAVE_LargeImages_96__RESID: (null) */
+ID_APM_SAVE_LargeImages_192__RESID    IMAGE    "img\\64\\016-diskette.png" /* LargeImages ID_APM_SAVE_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_AS_LabelTitle_RESID L"Zapisz bez t\x0142a" /* LabelTitle ID_APM_SAVE_AS_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_AS_LabelDescription_RESID L"Zapisz plik bez t\x0142a" /* LabelDescription ID_APM_SAVE_AS_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_AS_Keytip_RESID L"A" /* Keytip ID_APM_SAVE_AS_Keytip_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_AS_TooltipTitle_RESID L"Zapisz jako (CTRL+SHIFT+S)" /* TooltipTitle ID_APM_SAVE_AS_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SAVE_AS_TooltipDescription_RESID L"Zapisuje obraz do nowego pliku." /* TooltipDescription ID_APM_SAVE_AS_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_SAVE_AS_SmallImages_96__RESID    IMAGE    "img\\16\\016-diskette.png" /* SmallImages ID_APM_SAVE_AS_SmallImages_96__RESID: (null) */
+ID_APM_SAVE_AS_SmallImages_192__RESID    IMAGE    "img\\32\\016-diskette.png" /* SmallImages ID_APM_SAVE_AS_SmallImages_192__RESID: (null) */
+ID_APM_SAVE_AS_LargeImages_96__RESID    IMAGE    "img\\32\\016-diskette.png" /* LargeImages ID_APM_SAVE_AS_LargeImages_96__RESID: (null) */
+ID_APM_SAVE_AS_LargeImages_192__RESID    IMAGE    "img\\64\\016-diskette.png" /* LargeImages ID_APM_SAVE_AS_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_PRINT_LabelTitle_RESID L"Drukuj" /* LabelTitle ID_APM_PRINT_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_PRINT_LabelDescription_RESID L"Drukuj obraz" /* LabelDescription ID_APM_PRINT_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_PRINT_Keytip_RESID L"P" /* Keytip ID_APM_PRINT_Keytip_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_PRINT_TooltipTitle_RESID L"Drukuj (CTRL+P)" /* TooltipTitle ID_APM_PRINT_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_PRINT_TooltipDescription_RESID L"Drukuje obraz." /* TooltipDescription ID_APM_PRINT_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_PRINT_SmallImages_96__RESID    IMAGE    "img\\16\\020-printer.png" /* SmallImages ID_APM_PRINT_SmallImages_96__RESID: (null) */
+ID_APM_PRINT_SmallImages_192__RESID    IMAGE    "img\\32\\020-printer.png" /* SmallImages ID_APM_PRINT_SmallImages_192__RESID: (null) */
+ID_APM_PRINT_LargeImages_96__RESID    IMAGE    "img\\32\\020-printer.png" /* LargeImages ID_APM_PRINT_LargeImages_96__RESID: (null) */
+ID_APM_PRINT_LargeImages_192__RESID    IMAGE    "img\\64\\020-printer.png" /* LargeImages ID_APM_PRINT_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_SETTINGS_LabelTitle_RESID L"Ustawienia" /* LabelTitle ID_APM_SETTINGS_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SETTINGS_LabelDescription_RESID L"Ustawienia obrazu" /* LabelDescription ID_APM_SETTINGS_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SETTINGS_TooltipTitle_RESID L"Ustawienia" /* TooltipTitle ID_APM_SETTINGS_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_SETTINGS_TooltipDescription_RESID L"Zmie\x0144 ustawienia obrazu." /* TooltipDescription ID_APM_SETTINGS_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_SETTINGS_SmallImages_96__RESID    IMAGE    "img\\16\\017-gear.png" /* SmallImages ID_APM_SETTINGS_SmallImages_96__RESID: (null) */
+ID_APM_SETTINGS_SmallImages_192__RESID    IMAGE    "img\\32\\017-gear.png" /* SmallImages ID_APM_SETTINGS_SmallImages_192__RESID: (null) */
+ID_APM_SETTINGS_LargeImages_96__RESID    IMAGE    "img\\32\\017-gear.png" /* LargeImages ID_APM_SETTINGS_LargeImages_96__RESID: (null) */
+ID_APM_SETTINGS_LargeImages_192__RESID    IMAGE    "img\\64\\017-gear.png" /* LargeImages ID_APM_SETTINGS_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_INFORMATION_LabelTitle_RESID L"XDPaint - informacje" /* LabelTitle ID_APM_INFORMATION_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_INFORMATION_LabelDescription_RESID L"XDPaint - informacje o programie" /* LabelDescription ID_APM_INFORMATION_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_INFORMATION_TooltipTitle_RESID L"XDPaint - informacje" /* TooltipTitle ID_APM_INFORMATION_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_INFORMATION_TooltipDescription_RESID L"Wy\x015bwietl informacje o programie." /* TooltipDescription ID_APM_INFORMATION_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_INFORMATION_SmallImages_96__RESID    IMAGE    "img\\16\\019-police-hat.png" /* SmallImages ID_APM_INFORMATION_SmallImages_96__RESID: (null) */
+ID_APM_INFORMATION_SmallImages_192__RESID    IMAGE    "img\\32\\019-police-hat.png" /* SmallImages ID_APM_INFORMATION_SmallImages_192__RESID: (null) */
+ID_APM_INFORMATION_LargeImages_96__RESID    IMAGE    "img\\32\\019-police-hat.png" /* LargeImages ID_APM_INFORMATION_LargeImages_96__RESID: (null) */
+ID_APM_INFORMATION_LargeImages_192__RESID    IMAGE    "img\\64\\019-police-hat.png" /* LargeImages ID_APM_INFORMATION_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_APM_EXIT_LabelTitle_RESID L"Zako\x0144cz" /* LabelTitle ID_APM_EXIT_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_EXIT_LabelDescription_RESID L"Zako\x0144cz program" /* LabelDescription ID_APM_EXIT_LabelDescription_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_EXIT_TooltipTitle_RESID L"Zako\x0144cz" /* TooltipTitle ID_APM_EXIT_TooltipTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APM_EXIT_TooltipDescription_RESID L"Zako\x0144cz program." /* TooltipDescription ID_APM_EXIT_TooltipDescription_RESID: (null) */
+END
+
+ID_APM_EXIT_SmallImages_96__RESID    IMAGE    "img\\16\\021-door.png" /* SmallImages ID_APM_EXIT_SmallImages_96__RESID: (null) */
+ID_APM_EXIT_SmallImages_192__RESID    IMAGE    "img\\32\\021-door.png" /* SmallImages ID_APM_EXIT_SmallImages_192__RESID: (null) */
+ID_APM_EXIT_LargeImages_96__RESID    IMAGE    "img\\32\\021-door.png" /* LargeImages ID_APM_EXIT_LargeImages_96__RESID: (null) */
+ID_APM_EXIT_LargeImages_192__RESID    IMAGE    "img\\64\\021-door.png" /* LargeImages ID_APM_EXIT_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_TOOL_PENCIL_LabelTitle_RESID L"O\x0142\x00f3wek" /* LabelTitle ID_TOOL_PENCIL_LabelTitle_RESID: (null) */
+END
+
+ID_TOOL_PENCIL_SmallImages_96__RESID    IMAGE    "img\\16\\002-edit.png" /* SmallImages ID_TOOL_PENCIL_SmallImages_96__RESID: (null) */
+ID_TOOL_PENCIL_SmallImages_192__RESID    IMAGE    "img\\32\\002-edit.png" /* SmallImages ID_TOOL_PENCIL_SmallImages_192__RESID: (null) */
+ID_TOOL_PENCIL_LargeImages_96__RESID    IMAGE    "img\\32\\002-edit.png" /* LargeImages ID_TOOL_PENCIL_LargeImages_96__RESID: (null) */
+ID_TOOL_PENCIL_LargeImages_192__RESID    IMAGE    "img\\64\\002-edit.png" /* LargeImages ID_TOOL_PENCIL_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_TOOL_TEXT_LabelTitle_RESID L"Tekst" /* LabelTitle ID_TOOL_TEXT_LabelTitle_RESID: (null) */
+END
+
+ID_TOOL_TEXT_SmallImages_96__RESID    IMAGE    "img\\16\\007-text.png" /* SmallImages ID_TOOL_TEXT_SmallImages_96__RESID: (null) */
+ID_TOOL_TEXT_SmallImages_192__RESID    IMAGE    "img\\32\\007-text.png" /* SmallImages ID_TOOL_TEXT_SmallImages_192__RESID: (null) */
+ID_TOOL_TEXT_LargeImages_96__RESID    IMAGE    "img\\32\\007-text.png" /* LargeImages ID_TOOL_TEXT_LargeImages_96__RESID: (null) */
+ID_TOOL_TEXT_LargeImages_192__RESID    IMAGE    "img\\64\\007-text.png" /* LargeImages ID_TOOL_TEXT_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_TOOL_PIPETTE_LabelTitle_RESID L"Pobierz kolor" /* LabelTitle ID_TOOL_PIPETTE_LabelTitle_RESID: (null) */
+END
+
+ID_TOOL_PIPETTE_SmallImages_96__RESID    IMAGE    "img\\16\\003-pipette.png" /* SmallImages ID_TOOL_PIPETTE_SmallImages_96__RESID: (null) */
+ID_TOOL_PIPETTE_SmallImages_192__RESID    IMAGE    "img\\32\\003-pipette.png" /* SmallImages ID_TOOL_PIPETTE_SmallImages_192__RESID: (null) */
+ID_TOOL_PIPETTE_LargeImages_96__RESID    IMAGE    "img\\32\\003-pipette.png" /* LargeImages ID_TOOL_PIPETTE_LargeImages_96__RESID: (null) */
+ID_TOOL_PIPETTE_LargeImages_192__RESID    IMAGE    "img\\64\\003-pipette.png" /* LargeImages ID_TOOL_PIPETTE_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_TOOL_MAGNIFIER_LabelTitle_RESID L"Lupa" /* LabelTitle ID_TOOL_MAGNIFIER_LabelTitle_RESID: (null) */
+END
+
+ID_TOOL_MAGNIFIER_SmallImages_96__RESID    IMAGE    "img\\16\\005-search.png" /* SmallImages ID_TOOL_MAGNIFIER_SmallImages_96__RESID: (null) */
+ID_TOOL_MAGNIFIER_SmallImages_192__RESID    IMAGE    "img\\32\\005-search.png" /* SmallImages ID_TOOL_MAGNIFIER_SmallImages_192__RESID: (null) */
+ID_TOOL_MAGNIFIER_LargeImages_96__RESID    IMAGE    "img\\32\\005-search.png" /* LargeImages ID_TOOL_MAGNIFIER_LargeImages_96__RESID: (null) */
+ID_TOOL_MAGNIFIER_LargeImages_192__RESID    IMAGE    "img\\64\\005-search.png" /* LargeImages ID_TOOL_MAGNIFIER_LargeImages_192__RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_COLORPICKER_BACKGROUND_LabelTitle_RESID L"T\x0142o" /* LabelTitle ID_COLORPICKER_BACKGROUND_LabelTitle_RESID: (null) */
+END
+
+ID_COLORPICKER_BACKGROUND_LargeImages_RESID    BITMAP    "img\\CP.bmp" /* LargeImages ID_COLORPICKER_BACKGROUND_LargeImages_RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_COLORPICKER_FILL_LabelTitle_RESID L"Wype\x0142nienie" /* LabelTitle ID_COLORPICKER_FILL_LabelTitle_RESID: (null) */
+END
+
+ID_COLORPICKER_FILL_LargeImages_RESID    BITMAP    "img\\CP.bmp" /* LargeImages ID_COLORPICKER_FILL_LargeImages_RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_COLORPICKER_OUTLINE_LabelTitle_RESID L"Kontur" /* LabelTitle ID_COLORPICKER_OUTLINE_LabelTitle_RESID: (null) */
+END
+
+ID_COLORPICKER_OUTLINE_LargeImages_RESID    BITMAP    "img\\CP.bmp" /* LargeImages ID_COLORPICKER_OUTLINE_LargeImages_RESID: (null) */
+STRINGTABLE 
+BEGIN
+    ID_SPINNER_LabelTitle_RESID L"Grubo\x015b\x0107:" /* LabelTitle ID_SPINNER_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GROUP_TOOLS_LabelTitle_RESID L"Narz\x0119dzia" /* LabelTitle ID_GROUP_TOOLS_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GROUP_SHAPES_LabelTitle_RESID L"Kszta\x0142ty" /* LabelTitle ID_GROUP_SHAPES_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GROUP_COLOR_PICKER_LabelTitle_RESID L"Kolory" /* LabelTitle ID_GROUP_COLOR_PICKER_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GROUP_OUTLINE_LabelTitle_RESID L"Kontur" /* LabelTitle ID_GROUP_OUTLINE_LabelTitle_RESID: (null) */
+END
+
+STRINGTABLE 
+BEGIN
+    ID_SHAPEPICKER_LabelTitle_RESID L"Shapes" /* LabelTitle ID_SHAPEPICKER_LabelTitle_RESID: (null) */
+END
+
 STRINGTABLE 
 BEGIN
     cmdFileMenu_LabelTitle_RESID L"Label:cmdFileMenu" /* LabelTitle cmdFileMenu_LabelTitle_RESID: (null) */
@@ -16,26 +314,6 @@ END
 STRINGTABLE 
 BEGIN
     cmdMRUItems_LabelTitle_RESID L"Label:cmdMRUItems" /* LabelTitle cmdMRUItems_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdOpen_LabelTitle_RESID L"Label:cmdOpen" /* LabelTitle cmdOpen_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdSave_LabelTitle_RESID L"Label:cmdSave" /* LabelTitle cmdSave_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdPrint_LabelTitle_RESID L"Label:cmdPrint" /* LabelTitle cmdPrint_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdExit_LabelTitle_RESID L"Label:cmdExit" /* LabelTitle cmdExit_LabelTitle_RESID: (null) */
 END
 
 STRINGTABLE 
@@ -56,21 +334,6 @@ END
 STRINGTABLE 
 BEGIN
     cmdTabHome_LabelTitle_RESID L"Label:cmdTabHome" /* LabelTitle cmdTabHome_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdClipboardGroup_LabelTitle_RESID L"Label:cmdClipboardGroup" /* LabelTitle cmdClipboardGroup_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdCopy_LabelTitle_RESID L"Label:cmdCopy" /* LabelTitle cmdCopy_LabelTitle_RESID: (null) */
-END
-
-STRINGTABLE 
-BEGIN
-    cmdPaste_LabelTitle_RESID L"Label:cmdPaste" /* LabelTitle cmdPaste_LabelTitle_RESID: (null) */
 END
 
 APPLICATION_RIBBON    UIFILE    "Ribbon.bml"

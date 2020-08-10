@@ -38,6 +38,7 @@ class MainWindow
 	HRESULT HandleOnDestroyUICommand(UINT32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler *commandHandler);
 	//UICommandHandler events
 	HRESULT HandleExecute(UINT32 commandId, UI_EXECUTIONVERB verb, const PROPERTYKEY * key, const PROPVARIANT * currentValue, IUISimplePropertySet * commandExecutionProperties);
+	HRESULT CreateUIImageFromBitmapResource(LPCTSTR pszResource, IUIImage ** ppimg);
 	HRESULT HandleUpdateProperty(UINT32 commandId, REFPROPERTYKEY key, const PROPVARIANT * currentValue, PROPVARIANT * newValue);
 public:
 	MainWindow(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, INT nCmdShow);

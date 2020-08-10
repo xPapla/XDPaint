@@ -3,8 +3,14 @@
 class Rectangle :
 	public Shape
 {
+	std::vector<sf::Vector2f> normalizedPoints = { {0,0}, {0,1}, {1,1}, {1,0} };
 public:
-	Rectangle();
-	~Rectangle();
-};
+	Rectangle() {
+		UpdatePoints();
+	}
+	void UpdatePoints();
+	~Rectangle() {	};
 
+	// Inherited via Shape
+	virtual void setSize(sf::Vector2f size) override;
+};

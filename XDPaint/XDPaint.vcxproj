@@ -95,7 +95,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-main-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-main-d.lib;sfml-system-d.lib;sfml-window-d.lib;Propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>(robocopy $(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\bin\ $(OutputPath) sfml-graphics-d-2.dll sfml-system-d-2.dll sfml-window-d-2.dll) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0</Command>
@@ -111,7 +111,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-main-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-main-d.lib;sfml-system-d.lib;sfml-window-d.lib;Propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>(robocopy $(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\bin\ $(OutputPath) sfml-graphics-d-2.dll sfml-system-d-2.dll sfml-window-d-2.dll) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0</Command>
@@ -131,7 +131,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-main.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-main.lib;sfml-system.lib;sfml-window.lib;Propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>(robocopy $(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\bin\ $(OutputPath) sfml-graphics-2.dll sfml-system-2.dll sfml-window-2.dll) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0</Command>
@@ -151,7 +151,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-main.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-main.lib;sfml-system.lib;sfml-window.lib;Propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>(robocopy $(SolutionDir)lib\SFML-2.5.1\$(PlatformShortName)\bin\ $(OutputPath) sfml-graphics-2.dll sfml-system-2.dll sfml-window-2.dll) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0</Command>
@@ -160,26 +160,30 @@
   <ItemGroup>
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Diamond.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="PropertySet.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SFMLWindow.cpp" />
     <ClCompile Include="Shape.cpp" />
-    <ClCompile Include="Square.cpp" />
+    <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="UIApplication.cpp" />
     <ClCompile Include="UICommandHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Diamond.h" />
     <ClInclude Include="main.hpp" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="PropertySet.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RibbonIDs.h" />
     <ClInclude Include="SFMLWindow.h" />
     <ClInclude Include="Shape.h" />
-    <ClInclude Include="Square.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="UIApplication.hpp" />
     <ClInclude Include="UICommandHandler.h" />
   </ItemGroup>
@@ -198,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="XDPaint.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ribbon.bml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

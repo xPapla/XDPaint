@@ -1,16 +1,20 @@
 #include "Circle.h"
 
-
-
-Circle::Circle()
+void Circle::UpdatePoints()
 {
+	sf::Vector2f scale = size;
+	scaledPoints.clear();
+	for (auto point : normalizedPoints) {
+		point.x *= scale.x;
+		point.y *= scale.y;
+		scaledPoints.push_back(point);
+	}
+	update();
 }
 
 
-Circle::~Circle()
+void Circle::setSize(sf::Vector2f size)
 {
-}
-
-void Circle::Draw()
-{
+	this->size = size;
+	UpdatePoints();
 }
